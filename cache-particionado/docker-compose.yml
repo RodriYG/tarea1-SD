@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  postgresql-main:
+    image: 'postgres'
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=tarea1
+    volumes:
+      - ./postgres/schema.sql:/docker-entrypoint-initdb.d/create_schema.sql
+      - ./postgres/airports.sql:/docker-entrypoint-initdb.d/data.sql
