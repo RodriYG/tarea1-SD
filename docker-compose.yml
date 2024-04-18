@@ -10,4 +10,4 @@ services:
       - POSTGRES_DB=tarea1
     volumes:
       - ./postgres/schema.sql:docker-entrypoint-initdb.d/schema.sql
-      - ./postgres/airports.sql:docker-entrypoint-initdb.d/data.sql
+      - ./postgres/airports.sql:docker-entrypoint-initdb.d/airports.sql
