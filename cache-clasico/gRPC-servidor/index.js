@@ -38,13 +38,14 @@ function findAirport(call, callback) {
 function getAllAirports(call, callback) {
     pool.query('SELECT * FROM AIRPORTS', (error, results) => {
         if (error) {
+            console.log(error);
             callback({
                 message: 'Error occurred',
                 code: grpc.status.INTERNAL
             });
         }
         else {
-            callback(null, { airports: results.rows });
+            callback(null, { airports: results });
         }
     });
 }

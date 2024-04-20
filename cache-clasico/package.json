@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-servidor": "node ./gRPC-servidor/index.js",
+    "start-cliente": "node ./gRPC-cliente/index.js",
+    "start": "concurrently 'npm run start-servidor' 'npm run start-cliente'"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +17,8 @@
     "express": "^4.19.2",
     "pg": "^8.11.5",
     "postgres": "^3.4.4"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
