@@ -15,7 +15,7 @@ const pool = new pg.Pool({
     port: 5432,
 });
 
-function findAirport(call, callback) {
+async function findAirport(call, callback) {
     pool.query('SELECT * FROM AIRPORTS WHERE code = $1', [call.request.code], (error, results) => {
         if (error) {
             callback({
@@ -35,7 +35,7 @@ function findAirport(call, callback) {
     });
 }
 
-function getAllAirports(call, callback) {
+async function getAllAirports(call, callback) {
     pool.query('SELECT * FROM AIRPORTS', (error, results) => {
         if (error) {
             console.log(error);
@@ -45,7 +45,7 @@ function getAllAirports(call, callback) {
             });
         }
         else {
-            callback(null, { airports: results });
+            callback(null, { airports: results.rows });
         }
     });
 }
