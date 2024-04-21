@@ -26,3 +26,6 @@ http://0.0.0.0:3000/airports/code
 ```
 
 La primera para obtener todos los datos, y la segunda para obtener un dato en especifico.
+
+
+Link de video explicativo: [https://youtu.be/MBMSJ8d468o](https://youtu.be/MBMSJ8d468o)
