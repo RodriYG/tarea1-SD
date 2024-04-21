@@ -3,6 +3,7 @@ const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const express = require('express');
 const redis = require('redis');
+const responseTime = require('response-time');
 
 const clientRedis = redis.createClient({
     host: '0.0.0.0',
@@ -21,6 +22,7 @@ const client = new proto_path.Airports('0.0.0.0:50051', grpc.credentials.createI
 
 const app = express();
 app.listen(3000);
+app.use(responseTime());
 console.log(`Listening on port 3000`)
 
 app.get('/airports', async (req, res) => {
