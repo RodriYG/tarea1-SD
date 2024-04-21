@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+service Airports {
+  rpc getAirport (code) returns (Airport) {}
+  rpc getAll (empty) returns (All) {}
+}
+
+message code {
+  string code = 1;
+}
+
+message Airport {
+  string code = 1;
+  string name = 2;
+}
+
+message empty {}
+
+message All {
+    repeated Airport airport = 1;
+}
