@@ -17,5 +17,5 @@ message Airport {
 message empty {}
 
 message All {
-    repeated Airport airport = 1;
+    repeated Airport airports = 1;
 }
