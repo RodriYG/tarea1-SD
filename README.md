@@ -1,5 +1,5 @@
 # Tarea 1 - Sistemas Distribuidos
-Instalar modulos en cada carperta "cache-*" con el siguiente comando:
+Instalar modulos en la carperta "cache-*" con el sistema de chache a probar:
 ```sh
 npm install
 ```
